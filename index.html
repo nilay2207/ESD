@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Turn Waste into Gold</title>
     <!-- Link to your CSS file -->
     <link rel="stylesheet" href="style.css">
@@ -14,7 +17,10 @@
         <div class="logo">
             <h1 style="color: black;">TerraNourish Innovations</h1>
         </div>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home" style="color: black;">Home</a></li>
             <li><a href="#about" style="color: black;">About</a></li>
             <li><a href="#why-vermicomposting" style="color: black;">Importance</a></li>
@@ -45,7 +51,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <h2 style="color: black;">About Vermicomposting</h2>
-        <h3 style="font-weight: bold;">Vermicomposting is the process of using earthworms to convert organic waste into compost. It’s eco-friendly, sustainable, and great for your garden!</h3>
+        <h3 style="font-weight: bold;">Vermicomposting is the process of using earthworms to convert organic waste into compost. It's eco-friendly, sustainable, and great for your garden!</h3>
         <div class="steps">
             <div class="step">
                 <h3>Step 1: Set Up Your Bin</h3>
