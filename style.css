@@ -269,48 +269,36 @@ footer {
 
 /* Gallery Section */
 .gallery .image-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .gallery .image-grid img {
     width: 100%;
-    max-width: 300px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    object-fit: cover; /* Ensures images fill the space without distortion */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* This will crop images to fit */
+    border-radius: 8px;
+    display: block;
 }
 
-/* Hover Effect */
-.gallery .image-grid img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery .image-grid img:hover {
-    transform: scale(1.2); /* Slightly enlarge the image */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
-}
-
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 992px) {
     .gallery .image-grid {
-        gap: 15px;
-    }
-    
-    .gallery .image-grid img {
-        max-width: 45%;
-    }
-    
-    .gallery .image-grid img:hover {
-        transform: scale(1.1); /* Smaller scale for mobile */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+    .gallery .image-grid {
+        grid-template-columns: 1fr; /* 1 column on phones */
+    }
+    
     .gallery .image-grid img {
-        max-width: 100%;
-        margin-bottom: 15px;
+        height: 250px; /* Slightly taller on mobile */
     }
 }
 
