@@ -60,6 +60,49 @@ nav {
     border-radius: 3px;
 }
 
+#searchResults {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 250px;
+  overflow-y: auto;
+  width: 300px;
+  margin-top: 5px;
+  padding: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+#searchResults li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: black;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+#searchResults li:hover {
+  background-color: #f2f2f2;
+}
+
+#searchInput {
+  padding: 8px;
+  width: 250px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.highlight {
+  background-color: rgb(95, 227, 133);
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+
 .search-bar button {
     padding: 5px 10px;
     background-color: #4CAF50;

@@ -33,9 +33,11 @@
             <li><a href="#faq" style="color: black;">FAQ</a></li>
             <li><a href="#contact" style="color: black;">Contact</a></li>
         </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button><i class="fas fa-search"></i></button>
+        <!-- search bar -->
+        <div class="search-bar" style="position: relative;">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button title="search" onclick="searchContent()"><i class="fas fa-search"></i></button>
+            <ul id="searchResults"></ul>
         </div>
     </nav>
 
@@ -221,15 +223,15 @@
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>Have questions or feedback? Reach out to us!</p>
-        <form class="contact-form">
+        <form class="contact-form" action="https://formspree.io/f/xgvybnny" method="post">
             <div class="form-group">
                 <input type="text" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-                <input type="email" placeholder="Your Number" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
             </div>
             <div class="form-group">
-                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn">Send Message</button>
         </form>

@@ -5,6 +5,56 @@ document.querySelectorAll('.faq-item h3').forEach((faqQuestion) => {
     });
 });
 
+// search
+
+function searchContent() {
+  const input = document.getElementById("searchInput").value.trim();
+  const keyword = input.toLowerCase();
+  const resultsContainer = document.getElementById("searchResults");
+  resultsContainer.innerHTML = "";
+
+  if (keyword === "") return;
+
+  const selectors = "h1, h2, h3, h4, h5, h6, p, li, span, div";
+  const elements = document.querySelectorAll(selectors);
+  let matchCount = 0;
+
+  elements.forEach((el, index) => {
+    const text = el.textContent || el.innerText;
+    if (text.toLowerCase().includes(keyword)) {
+      matchCount++;
+
+      // Assign unique ID if missing
+      if (!el.id) el.id = "match-auto-" + index;
+
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="#${el.id}" style="color: black; text-decoration: none;">${text.slice(0, 60)}...</a>`;
+
+      // Add click event to highlight after jump
+      li.querySelector("a").addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.getElementById(el.id);
+
+        // Restore original HTML first (to remove old highlights)
+        target.innerHTML = text;
+
+        // Highlight keyword
+        const regex = new RegExp(`(${input})`, "gi");
+        target.innerHTML = target.innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+
+        // Scroll to target
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+
+      resultsContainer.appendChild(li);
+    }
+  });
+
+  if (matchCount === 0) {
+    resultsContainer.innerHTML = `<li style="color: red;">No results found</li>`;
+  }
+}
+
 // Navbar Scroll Animation
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
